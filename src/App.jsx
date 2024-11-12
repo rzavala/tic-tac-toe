@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import confetti from 'canvas-confetti'
 import './App.css'
 
 const TURNS = {
@@ -98,6 +99,7 @@ function App() {
 
     const newWinner = checkWinner(newBoard)
     if(newWinner) {
+      confetti()
       setWinner(newWinner)
       //este alert aparece antes de que se marque la tercecr casilla 
       //por que la actualizacion del estado es asincrona 
